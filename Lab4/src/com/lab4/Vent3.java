@@ -11,7 +11,7 @@ package com.lab4;
 public class Vent3 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vent3
+     * Creates new form prueba_interfaz
      */
     public Vent3() {
         initComponents();
@@ -26,17 +26,36 @@ public class Vent3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        background = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        background.setBackground(new java.awt.Color(255, 183, 176));
+        background.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jButton1.setText("SALIR");
+        background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 100, -1));
+
+        jButton4.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jButton4.setText("JUGAR");
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -68,6 +87,9 @@ public class Vent3 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Vent3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -78,5 +100,8 @@ public class Vent3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel background;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton4;
     // End of variables declaration//GEN-END:variables
 }

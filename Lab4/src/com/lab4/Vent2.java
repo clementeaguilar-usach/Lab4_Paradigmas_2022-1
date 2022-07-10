@@ -11,7 +11,7 @@ package com.lab4;
 public class Vent2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Interfaz
+     * Creates new form prueba_interfaz
      */
     public Vent2() {
         initComponents();
@@ -26,21 +26,137 @@ public class Vent2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        background = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Separator1 = new javax.swing.JSeparator();
+        Separator2 = new javax.swing.JSeparator();
+        Separator3 = new javax.swing.JSeparator();
+        Separator4 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        background.setBackground(new java.awt.Color(255, 183, 176));
+        background.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        background.setFocusable(false);
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jButton1.setText("VOLVER");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 140, -1));
+
+        jButton4.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jButton4.setText("ACEPTAR");
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 140, -1));
+
+        jTextField1.setBackground(new java.awt.Color(255, 239, 255));
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextField1.setToolTipText("Ingrese el número de cartas con el que desea jugar");
+        jTextField1.setBorder(null);
+        background.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 190, 30));
+
+        jLabel1.setBackground(new java.awt.Color(255, 183, 176));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 239, 255));
+        jLabel1.setText("Tamaño del mazo:");
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
+
+        jTextField2.setBackground(new java.awt.Color(255, 239, 255));
+        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextField2.setToolTipText("");
+        jTextField2.setBorder(null);
+        background.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 190, 30));
+
+        jLabel2.setBackground(new java.awt.Color(255, 183, 176));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 239, 255));
+        jLabel2.setText("Figuras por carta:");
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+
+        jTextField3.setBackground(new java.awt.Color(255, 239, 255));
+        jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jTextField3.setToolTipText("");
+        jTextField3.setBorder(null);
+        background.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 190, 30));
+
+        jLabel3.setBackground(new java.awt.Color(255, 183, 176));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 239, 255));
+        jLabel3.setText("Número de jugadores:");
+        background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
+
+        jLabel4.setBackground(new java.awt.Color(255, 183, 176));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 239, 255));
+        jLabel4.setText("Modo de juego:");
+        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
+        background.add(Separator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 130, 10));
+        background.add(Separator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 130, 10));
+        background.add(Separator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 10));
+        background.add(Separator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 130, 10));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/q_mark.png"))); // NOI18N
+        jLabel5.setToolTipText("Escoja su modo de juego.");
+        background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 40, 40));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/q_mark.png"))); // NOI18N
+        jLabel6.setToolTipText("Ingresa el número de jugadores para tu partida.");
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 40, 40));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/q_mark.png"))); // NOI18N
+        jLabel7.setToolTipText("Ingrese el tamaño del mazo con el que se desea jugar. En csao de querer un mazo completo, ingresar -1.");
+        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 40, 40));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/q_mark.png"))); // NOI18N
+        jLabel8.setToolTipText("Ingrese el número de figuras que aparecerán en cada carta.");
+        background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 40, 40));
+
+        jButton2.setText("jButton2");
+        background.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, -1, -1));
+
+        jButton3.setText("jButton2");
+        background.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,5 +197,25 @@ public class Vent2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSeparator Separator1;
+    private javax.swing.JSeparator Separator2;
+    private javax.swing.JSeparator Separator3;
+    private javax.swing.JSeparator Separator4;
+    private javax.swing.JPanel background;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
