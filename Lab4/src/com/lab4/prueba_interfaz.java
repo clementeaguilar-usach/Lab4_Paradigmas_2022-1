@@ -49,7 +49,7 @@ public class prueba_interfaz extends javax.swing.JFrame {
 
         jButton3.setText("jButton3");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("Hola");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
