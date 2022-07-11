@@ -100,7 +100,6 @@ public class Dobble {
         for(int e=1; e<= aux; e++){
             elements0.add(Elements.get(e)+" ");
         }
-        this.elements = elements0;
         ArrayList<Card> mazo = new ArrayList<Card>();
         ArrayList<String> elements2 = new ArrayList<String>();
 
@@ -130,19 +129,24 @@ public class Dobble {
                 mazo.add(new Card(new ArrayList<String>(elements2)));
             }
         }
-
+        if(maxC != -1 && maxC != 0){
+            for(int i = 0; i < aux - maxC; i++){
+                elements0.remove(0);
+            }
+        }
+        this.elements = elements0;
         Collections.shuffle(mazo);
         
         if(maxC != -1 && maxC != 0){
-            for(int i = 0; i < maxC; i++){
-                this.cards.add(mazo.get(i));
+            for(int i = 0; i < aux - maxC; i++){
+                mazo.remove(0);
             }
-            this.maxC = this.cards.size();
+            this.maxC = mazo.size();
         }
         else{
-            this.cards = mazo;
             this.maxC = this.cards.size();
         }
+        this.cards = mazo;
         System.out.println("Mazo creado con exito.");
     }
     

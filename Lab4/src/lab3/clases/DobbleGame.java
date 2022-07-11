@@ -23,10 +23,19 @@ public class DobbleGame {
     private int modoJuego;
     private ArrayList<Player> jugadores;
     private Dobble cardsSet;
+    private ArrayList<Card> tablero;
 
     @Override
     public String toString() {
         return "DobbleGame{" + "cantJugadores=" + cantJugadores + ", jugadorActual=" + jugadorActual + ", modoJuego=" + modoJuego + ", jugadores=" + jugadores + ", cardsSet=" + cardsSet + '}';
+    }
+
+    public void setJugadorActual(String jugadorActual) {
+        this.jugadorActual = jugadorActual;
+    }
+
+    public void setTablero(ArrayList<Card> tablero) {
+        this.tablero = tablero;
     }
     
 
@@ -71,6 +80,18 @@ public class DobbleGame {
         this.jugadorActual = jugadorActual;
     }
 
+    public String getJugadorActual() {
+        return jugadorActual;
+    }
+
+    public ArrayList<Card> getTablero() {
+        return tablero;
+    }
+
+    public DobbleGame(ArrayList<Card> tablero) {
+        this.tablero = tablero;
+    }
+
     public void setModoJuego(int modoJuego) {
         this.modoJuego = modoJuego;
     }
@@ -107,12 +128,13 @@ public class DobbleGame {
         return cardsSet.dobbleCheck();
     }
 
-    public DobbleGame(int cantJugadores, String jugadorActual, int modoJuego, ArrayList<Player> jugadores, Dobble cardsSet) {
+    public DobbleGame(int cantJugadores, String jugadorActual, int modoJuego, ArrayList<Player> jugadores, Dobble cardsSet, ArrayList<Card> tablero) {
         this.cantJugadores = cantJugadores;
         this.jugadorActual = jugadorActual;
         this.modoJuego = modoJuego;
         this.jugadores = jugadores;
         this.cardsSet = cardsSet;
+        this.tablero = tablero;
     }
     
     public DobbleGame() {
@@ -121,6 +143,7 @@ public class DobbleGame {
         this.modoJuego = 0;
         this.jugadores = new ArrayList<Player>();
         this.cardsSet = new Dobble();
+        this.tablero = new ArrayList<Card>();
     }
     
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Vent3">
+  <ClassDiagramComponents>
+    <Class name="Vent3" package="com.lab4" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="Jugadores_display1" type="javax.swing.JTextPane" visibility="public"/>
+        <Field name="add_player" type="javax.swing.JButton" visibility="private"/>
+        <Field name="background" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="elements_display" type="javax.swing.JTextPane" visibility="public"/>
+        <Field name="game_v5" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="numE_label1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="numE_label2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="players_label1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="terminar_v1" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="add_playerActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="terminar_v1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

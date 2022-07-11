@@ -41,6 +41,7 @@ public class Vent3 extends javax.swing.JFrame {
         Jugadores_display1 = new javax.swing.JTextPane();
         players_label1 = new javax.swing.JLabel();
         numE_label1 = new javax.swing.JLabel();
+        numE_label3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agregar jugadores");
@@ -106,6 +107,12 @@ public class Vent3 extends javax.swing.JFrame {
         numE_label1.setForeground(new java.awt.Color(255, 239, 255));
         numE_label1.setText("Elementos");
         background.add(numE_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+
+        numE_label3.setBackground(new java.awt.Color(255, 183, 176));
+        numE_label3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        numE_label3.setForeground(new java.awt.Color(255, 239, 255));
+        numE_label3.setText("del mazo:");
+        background.add(numE_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -188,6 +195,7 @@ public class Vent3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel numE_label1;
     private javax.swing.JLabel numE_label2;
+    private javax.swing.JLabel numE_label3;
     private javax.swing.JLabel players_label1;
     private javax.swing.JButton terminar_v1;
     // End of variables declaration//GEN-END:variables

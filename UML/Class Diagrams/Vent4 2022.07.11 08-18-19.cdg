@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Vent4">
+  <ClassDiagramComponents>
+    <Class name="Vent4" package="com.lab4" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="Aceptar_v3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Separator" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="Volver_v3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="background" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="newPlayerName_field" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="newPlayerName_label" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="qmark1" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="Aceptar_v3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="newPlayerName_fieldActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
