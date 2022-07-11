@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.lab4;
+import lab3.controlador.*;
+import com.lab4.Vent2;
+import com.lab4.Vent3;
+import java.awt.event.WindowEvent;
+import java.awt.Toolkit;
 
 /**
  *
@@ -35,18 +40,19 @@ public class Vent4 extends javax.swing.JFrame {
         qmark1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(320, 240));
+        setTitle("Ingresar nombre");
+        setPreferredSize(new java.awt.Dimension(320, 260));
         setResizable(false);
 
         background.setBackground(new java.awt.Color(255, 183, 176));
         background.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        background.setPreferredSize(new java.awt.Dimension(320, 240));
+        background.setPreferredSize(new java.awt.Dimension(320, 260));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Volver_v3.setBackground(new java.awt.Color(255, 239, 255));
         Volver_v3.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         Volver_v3.setText("VOLVER");
-        background.add(Volver_v3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 130, -1));
+        background.add(Volver_v3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 130, -1));
 
         Aceptar_v3.setBackground(new java.awt.Color(255, 239, 255));
         Aceptar_v3.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
@@ -56,18 +62,23 @@ public class Vent4 extends javax.swing.JFrame {
                 Aceptar_v3ActionPerformed(evt);
             }
         });
-        background.add(Aceptar_v3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
+        background.add(Aceptar_v3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
 
         newPlayerName_label.setBackground(new java.awt.Color(255, 183, 176));
         newPlayerName_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         newPlayerName_label.setForeground(new java.awt.Color(255, 239, 255));
-        newPlayerName_label.setText("Número de jugadores:");
+        newPlayerName_label.setText("Ingresar nombre:");
         background.add(newPlayerName_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         newPlayerName_field.setBackground(new java.awt.Color(255, 239, 255));
         newPlayerName_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         newPlayerName_field.setToolTipText("");
         newPlayerName_field.setBorder(null);
+        newPlayerName_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newPlayerName_fieldActionPerformed(evt);
+            }
+        });
         background.add(newPlayerName_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 190, 30));
         background.add(Separator, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 130, 10));
 
@@ -96,7 +107,17 @@ public class Vent4 extends javax.swing.JFrame {
 
     private void Aceptar_v3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aceptar_v3ActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        Vent3 v3 = new Vent3();
+        Vent2.controlador.addplayer(newPlayerName_field.getText());
+        v3.Jugadores_display1.setText(Vent2.controlador.visualizar_Jugadores());
+        v3.elements_display.setText(Vent2.controlador.visualizar_Elementos());
+        v3.setVisible(true);  
     }//GEN-LAST:event_Aceptar_v3ActionPerformed
+
+    private void newPlayerName_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPlayerName_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newPlayerName_fieldActionPerformed
 
     /**
      * @param args the command line arguments

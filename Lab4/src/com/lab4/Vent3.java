@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.lab4;
+import com.lab4.Vent2;
+import lab3.controlador.*;
+import java.awt.event.WindowEvent;
+import java.awt.Toolkit;
 
 /**
  *
@@ -29,13 +33,17 @@ public class Vent3 extends javax.swing.JFrame {
         background = new javax.swing.JPanel();
         terminar_v1 = new javax.swing.JButton();
         game_v5 = new javax.swing.JButton();
-        players_label = new javax.swing.JLabel();
-        players_pane = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        numE_label2 = new javax.swing.JLabel();
         add_player = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        elements_display = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Jugadores_display1 = new javax.swing.JTextPane();
+        players_label1 = new javax.swing.JLabel();
+        numE_label1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setTitle("Agregar jugadores");
         setResizable(false);
 
         background.setBackground(new java.awt.Color(255, 183, 176));
@@ -47,31 +55,24 @@ public class Vent3 extends javax.swing.JFrame {
         terminar_v1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         terminar_v1.setText("TERMINAR");
         terminar_v1.setFocusable(false);
-        background.add(terminar_v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 160, -1));
+        terminar_v1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                terminar_v1ActionPerformed(evt);
+            }
+        });
+        background.add(terminar_v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 160, -1));
 
         game_v5.setBackground(new java.awt.Color(255, 239, 255));
         game_v5.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         game_v5.setText("INICIAR JUEGO");
         game_v5.setFocusable(false);
-        background.add(game_v5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
+        background.add(game_v5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
 
-        players_label.setBackground(new java.awt.Color(255, 183, 176));
-        players_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        players_label.setForeground(new java.awt.Color(255, 239, 255));
-        players_label.setText("Jugadores:");
-        background.add(players_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(255, 239, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(8);
-        jTextArea1.setBorder(null);
-        jTextArea1.setEnabled(false);
-        jTextArea1.setFocusable(false);
-        jTextArea1.setHighlighter(null);
-        players_pane.setViewportView(jTextArea1);
-
-        background.add(players_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
+        numE_label2.setBackground(new java.awt.Color(255, 183, 176));
+        numE_label2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        numE_label2.setForeground(new java.awt.Color(255, 239, 255));
+        numE_label2.setText("del mazo:");
+        background.add(numE_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
 
         add_player.setBackground(new java.awt.Color(255, 239, 255));
         add_player.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
@@ -83,6 +84,28 @@ public class Vent3 extends javax.swing.JFrame {
             }
         });
         background.add(add_player, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
+
+        elements_display.setEditable(false);
+        jScrollPane1.setViewportView(elements_display);
+
+        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 340, 130));
+
+        Jugadores_display1.setEditable(false);
+        jScrollPane2.setViewportView(Jugadores_display1);
+
+        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 340, 130));
+
+        players_label1.setBackground(new java.awt.Color(255, 183, 176));
+        players_label1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        players_label1.setForeground(new java.awt.Color(255, 239, 255));
+        players_label1.setText("Jugadores:");
+        background.add(players_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
+
+        numE_label1.setBackground(new java.awt.Color(255, 183, 176));
+        numE_label1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        numE_label1.setForeground(new java.awt.Color(255, 239, 255));
+        numE_label1.setText("Elementos");
+        background.add(numE_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,7 +128,17 @@ public class Vent3 extends javax.swing.JFrame {
 
     private void add_playerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_playerActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        Vent4 v4 = new Vent4();
+        v4.setVisible(true);
     }//GEN-LAST:event_add_playerActionPerformed
+
+    private void terminar_v1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminar_v1ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        Vent1 v1 = new Vent1();
+        v1.setVisible(true);
+    }//GEN-LAST:event_terminar_v1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,12 +179,16 @@ public class Vent3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextPane Jugadores_display1;
     private javax.swing.JButton add_player;
     private javax.swing.JPanel background;
+    public javax.swing.JTextPane elements_display;
     private javax.swing.JButton game_v5;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel players_label;
-    private javax.swing.JScrollPane players_pane;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel numE_label1;
+    private javax.swing.JLabel numE_label2;
+    private javax.swing.JLabel players_label1;
     private javax.swing.JButton terminar_v1;
     // End of variables declaration//GEN-END:variables
 }

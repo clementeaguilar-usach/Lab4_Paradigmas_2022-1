@@ -4,7 +4,6 @@
  */
 package lab3.clases;
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * Card corresponde a la clase que representa a cada carta que ser� parte

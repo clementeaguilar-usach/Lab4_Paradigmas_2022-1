@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.lab4;
+import lab3.controlador.*;
+import java.awt.event.WindowEvent;
+import java.awt.Toolkit;
+import javax.swing.JPanel;
 
 /**
  *
@@ -14,7 +18,13 @@ public class Vent1 extends javax.swing.JFrame {
      * Creates new form prueba_interfaz
      */
     public Vent1() {
+        this.controlador = new Controlador();
         initComponents();
+    }
+    
+    public void close(){
+        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }
 
     /**
@@ -32,6 +42,7 @@ public class Vent1 extends javax.swing.JFrame {
         Título = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Dobble");
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
@@ -42,11 +53,17 @@ public class Vent1 extends javax.swing.JFrame {
         Salir_quit.setBackground(new java.awt.Color(255, 239, 255));
         Salir_quit.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         Salir_quit.setText("SALIR");
+        Salir_quit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Salir_quitActionPerformed(evt);
+            }
+        });
         background.add(Salir_quit, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 100, -1));
 
         Jugar_v2.setBackground(new java.awt.Color(255, 239, 255));
         Jugar_v2.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         Jugar_v2.setText("JUGAR");
+        Jugar_v2.setName(""); // NOI18N
         Jugar_v2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Jugar_v2ActionPerformed(evt);
@@ -79,7 +96,16 @@ public class Vent1 extends javax.swing.JFrame {
 
     private void Jugar_v2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jugar_v2ActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        Vent2 v2 = new Vent2();
+        v2.setVisible(true);
+        
     }//GEN-LAST:event_Jugar_v2ActionPerformed
+
+    private void Salir_quitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir_quitActionPerformed
+        // TODO add your handling code here:
+        close();
+    }//GEN-LAST:event_Salir_quitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,7 +142,7 @@ public class Vent1 extends javax.swing.JFrame {
             }
         });
     }
-
+    private Controlador controlador;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Jugar_v2;
     private javax.swing.JButton Salir_quit;

@@ -4,19 +4,31 @@
  */
 package lab3.controlador;
 
-import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Scanner;
 import lab3.clases.*;
+import java.util.Arrays;
 
 /**
  *
  * @author CLEMENTE
+ * Controlador corresponde a la clase responsable de interactuar los
+ * métodos de las otras clases con la interfaz gráfica.
+ * 
+ * Sus atributos son:
+ * Game: Juego de Dobble.
+ * elements1: Lista de strings que contiene los elementos a aparecer en una carta
+ * de Dobble.
  */
 public class Controlador {
 
     private DobbleGame Game;
+    public ArrayList<String> elements1 = new ArrayList<>(
+                        Arrays.asList("-", "Leon", "Conejo", "Leopardo", "Oso", "Aguila", "Serpiente",
+                              "Zorro", "Loro", "Puma", "Tigre", "Escorpion", "Capibara",
+                              "Jaguar", "Avestruz", "Jirafa", "Elefante", "Rinoceronte", "Ballena",
+                              "Mono", "Chimpance", "Gorila", "Nandu", "Pudu", "Alce",
+                              "Hipopotamo", "Coyote", "Venado", "Antilope", "Tucan", "Caballo",
+                              "Pinguino", "imOp"));
 
     /**
      *
@@ -50,7 +62,7 @@ public class Controlador {
         return true;
     }
 
-    public void crear_juego(int cantidad, int maxC, int numE, int modo, ArrayList<String> Elements) {
+    public void crear_juego(int cantidad, int maxC, int numE, int modo) {
         if (cantidad <= 0) {
             System.out.println("No se puede crear un juego con 0 jugadores");
             return;
@@ -67,34 +79,64 @@ public class Controlador {
             System.out.println("No se puede crear un juego sin su modo");
             return;
         }
-        Dobble dobble = new Dobble(numE, maxC, Elements);
+        Dobble dobble = new Dobble(numE, maxC, elements1);
         Game.setCantJugadores(cantidad);
         Game.setCardsSet(dobble);
         Game.setModoJuego(modo);
         return;
     }
 
-    public void addplayer(String nombre) {
+    public String addplayer(String nombre) {
         if (Game.getCantJugadores() != Game.getJugadores().size()) {
             ArrayList<Player> jugadores = Game.getJugadores();
             for (Player jugador : jugadores) {
                 if (jugador.getNombre().equals(nombre)) {
-                    System.out.println("Jugador ya se encuentra dentro del juego.");
-                    return;
+                    return "-1";
                 }
             }
-            Player player = new Player(nombre, 0);
+            Player player = new Player(nombre, 0, new ArrayList<Card>());
             Game.getJugadores().add(player);
-            System.out.println("Jugador ingresado.");
+            return nombre;
         } else {
             System.out.println("No se pueden agregar mas jugadores a esta partida!");
+            return "0";
         }
     }
 
     public void jugar(int respuesta) {
         return;
     }
+    
+    public String visualizar_Elementos(){
+        String output = "";
+        for (String elemento : Game.getCardsSet().getElements()){
+            output = output.concat(elemento);
+        }
+        return output;
+    }
+    
+    public String visualizar_Jugadores(){
+        String output = "";
+        for (Player jugador : Game.getJugadores()){
+            output = output.concat(jugador.getNombre() + " Score: " + jugador.getScore() + "\n");
+        }
+        return output;
+    }
+    
+    public String visualizar_Mazo(){
+        String output = "";
+        output = output.concat("Mazo: \n");
+        for (Card carta : Game.getCardsSet().getCards()) {
+            output = output.concat("Carta: (");
+            for (String elemento : carta.getElements()) {
+                output = output.concat(elemento + " ");
+            }
+            output = output.concat(")\n");
+        }
+        return output;
+    }
 
+    /*
     public void visualizar_estado() {
         String output = "";
         output = output.concat("Jugadores actuales: ");
@@ -112,7 +154,7 @@ public class Controlador {
         }
         System.out.println(output);
     }
-
+*/
     public boolean dobbleCheck() {
         return Game.dobbleCheck();
     }

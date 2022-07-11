@@ -3,22 +3,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package lab3.clases;
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
-import java.util.Random;
 
 /**
  * Dobble corresponde a la clase que representa el mazo de cartas Dobble.
  * 
  * Sus atributos son:
  * cards: Lista de cartas del mazo
+ * maxC: Entero representando el tamaño del mazo.
+ * numE: Entero representando el número de elementos por carta.
  */
 public class Dobble {
     private ArrayList<Card> cards;
     private int maxC;
     private int numE;
+    private ArrayList<String> elements;
+    
     @Override
     public String toString() {
         return "Dobble{" + "cards=" + cards + '}';
@@ -54,24 +56,51 @@ public class Dobble {
         return cards;
     }
 
+    public void setElements(ArrayList<String> elements) {
+        this.elements = elements;
+    }
+
+    public ArrayList<String> getElements() {
+        return elements;
+    }
+
+    public Dobble(ArrayList<String> elements) {
+        this.elements = elements;
+    }
+
     public int getmaxC() {
         return maxC;
+    }
+    
+    public int getnumE() {
+        return numE;
     }
 
     public void setmaxC(int maxC) {
         this.maxC = maxC;
+    }
+    
+    public void setnumE(int numE) {
+        this.numE = numE;
     }
 
     public Dobble(){
         this.maxC = 0;
         this.numE = 0;
         this.cards = new ArrayList<Card>();
+        this.elements = new ArrayList<String>();
     }
 
     public Dobble(int numE, int maxC, ArrayList<String> Elements){
         this.maxC = maxC;
         this.numE = numE;
         Integer orden = numE - 1;
+        Integer aux = (orden*orden)+ orden + 1; //=)
+        ArrayList<String> elements0 = new ArrayList<String>();
+        for(int e=1; e<= aux; e++){
+            elements0.add(Elements.get(e)+" ");
+        }
+        this.elements = elements0;
         ArrayList<Card> mazo = new ArrayList<Card>();
         ArrayList<String> elements2 = new ArrayList<String>();
 
@@ -132,7 +161,6 @@ public class Dobble {
                             }
                         }
                     }
-                    
                 }
             }
         }

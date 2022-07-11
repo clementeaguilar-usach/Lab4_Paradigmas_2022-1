@@ -21,16 +21,42 @@ public class Player {
     private int score;
     private ArrayList<Card> stack;
 
-    @Override
-    public String toString() {
-        return "Player{" + "nombre=" + nombre + ", score=" + score + '}';
+    public Player(String nombre, int score, ArrayList<Card> stack) {
+        this.nombre = nombre;
+        this.score = score;
+        this.stack = stack;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public ArrayList<Card> getStack() {
+        return stack;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public void setStack(ArrayList<Card> stack) {
+        this.stack = stack;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.nombre);
-        hash = 97 * hash + this.score;
+        hash = 37 * hash + Objects.hashCode(this.nombre);
+        hash = 37 * hash + this.score;
+        hash = 37 * hash + Objects.hashCode(this.stack);
         return hash;
     }
 
@@ -49,28 +75,14 @@ public class Player {
         if (this.score != other.score) {
             return false;
         }
-        return Objects.equals(this.nombre, other.nombre);
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return Objects.equals(this.stack, other.stack);
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public Player(String nombre, int score) {
-        this.nombre = nombre;
-        this.score = score;
-        this.stack = new ArrayList<Card>();
-    }
+    @Override
+    public String toString() {
+        return "Player{" + "nombre=" + nombre + ", score=" + score + ", stack=" + stack + '}';
+    }  
 }

@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.lab4;
+import lab3.controlador.*;
+import java.awt.event.WindowEvent;
+import java.awt.Toolkit;
 
 /**
  *
@@ -16,6 +19,8 @@ public class Vent2 extends javax.swing.JFrame {
     public Vent2() {
         initComponents();
     }
+    
+    static Controlador controlador = new Controlador();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,7 +36,7 @@ public class Vent2 extends javax.swing.JFrame {
         Crear_v3 = new javax.swing.JButton();
         maxC_field = new javax.swing.JTextField();
         maxC_label = new javax.swing.JLabel();
-        numE_field = new javax.swing.JTextField();
+        mode_field = new javax.swing.JTextField();
         numE_label = new javax.swing.JLabel();
         nPlayers_field = new javax.swing.JTextField();
         nPlayers_label = new javax.swing.JLabel();
@@ -44,10 +49,10 @@ public class Vent2 extends javax.swing.JFrame {
         qmark1 = new javax.swing.JLabel();
         qmark2 = new javax.swing.JLabel();
         qmark3 = new javax.swing.JLabel();
-        mode2 = new javax.swing.JButton();
-        mode1 = new javax.swing.JButton();
+        numE_field = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Crear juego");
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
@@ -64,35 +69,50 @@ public class Vent2 extends javax.swing.JFrame {
                 Volver_v1ActionPerformed(evt);
             }
         });
-        background.add(Volver_v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 140, -1));
+        background.add(Volver_v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 140, -1));
 
         Crear_v3.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         Crear_v3.setText("CREAR");
-        background.add(Crear_v3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 140, -1));
+        Crear_v3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Crear_v3ActionPerformed(evt);
+            }
+        });
+        background.add(Crear_v3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 140, -1));
 
         maxC_field.setBackground(new java.awt.Color(255, 239, 255));
         maxC_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         maxC_field.setToolTipText("Ingrese el número de cartas con el que desea jugar");
         maxC_field.setBorder(null);
-        background.add(maxC_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 190, 30));
+        maxC_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maxC_fieldActionPerformed(evt);
+            }
+        });
+        background.add(maxC_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 190, 30));
 
         maxC_label.setBackground(new java.awt.Color(255, 183, 176));
         maxC_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         maxC_label.setForeground(new java.awt.Color(255, 239, 255));
         maxC_label.setText("Tamaño del mazo:");
-        background.add(maxC_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
+        background.add(maxC_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
 
-        numE_field.setBackground(new java.awt.Color(255, 239, 255));
-        numE_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        numE_field.setToolTipText("");
-        numE_field.setBorder(null);
-        background.add(numE_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 190, 30));
+        mode_field.setBackground(new java.awt.Color(255, 239, 255));
+        mode_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        mode_field.setToolTipText("");
+        mode_field.setBorder(null);
+        mode_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mode_fieldActionPerformed(evt);
+            }
+        });
+        background.add(mode_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 190, 30));
 
         numE_label.setBackground(new java.awt.Color(255, 183, 176));
         numE_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         numE_label.setForeground(new java.awt.Color(255, 239, 255));
         numE_label.setText("Figuras por carta:");
-        background.add(numE_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+        background.add(numE_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
 
         nPlayers_field.setBackground(new java.awt.Color(255, 239, 255));
         nPlayers_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -103,47 +123,50 @@ public class Vent2 extends javax.swing.JFrame {
                 nPlayers_fieldActionPerformed(evt);
             }
         });
-        background.add(nPlayers_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 190, 30));
+        background.add(nPlayers_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 190, 30));
 
         nPlayers_label.setBackground(new java.awt.Color(255, 183, 176));
         nPlayers_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         nPlayers_label.setForeground(new java.awt.Color(255, 239, 255));
         nPlayers_label.setText("Número de jugadores:");
-        background.add(nPlayers_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, -1));
+        background.add(nPlayers_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
 
         mode_label.setBackground(new java.awt.Color(255, 183, 176));
         mode_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         mode_label.setForeground(new java.awt.Color(255, 239, 255));
         mode_label.setText("Modo de juego:");
-        background.add(mode_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, -1, -1));
-        background.add(Separator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, 130, 10));
-        background.add(Separator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 130, 10));
-        background.add(Separator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 130, 10));
-        background.add(Separator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 130, 10));
+        background.add(mode_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, -1, -1));
+        background.add(Separator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 130, 10));
+        background.add(Separator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 130, 10));
+        background.add(Separator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 130, 10));
+        background.add(Separator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 130, 10));
 
         qmark4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/q_mark.png"))); // NOI18N
         qmark4.setToolTipText("Escoja su modo de juego.");
-        background.add(qmark4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 40, 40));
+        background.add(qmark4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 40, 40));
 
         qmark1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/q_mark.png"))); // NOI18N
         qmark1.setToolTipText("Ingresa el número de jugadores para tu partida.");
-        background.add(qmark1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 40, 40));
+        background.add(qmark1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 40, 40));
 
         qmark2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/q_mark.png"))); // NOI18N
         qmark2.setToolTipText("Ingrese el tamaño del mazo con el que se desea jugar. En csao de querer un mazo completo, ingresar -1.");
-        background.add(qmark2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 40, 40));
+        background.add(qmark2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 40, 40));
 
         qmark3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/q_mark.png"))); // NOI18N
         qmark3.setToolTipText("Ingrese el número de figuras que aparecerán en cada carta.");
-        background.add(qmark3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 40, 40));
+        background.add(qmark3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 40, 40));
 
-        mode2.setBackground(new java.awt.Color(255, 239, 255));
-        mode2.setText("Modo 2");
-        background.add(mode2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, -1, -1));
-
-        mode1.setBackground(new java.awt.Color(255, 239, 255));
-        mode1.setText("Modo 1");
-        background.add(mode1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
+        numE_field.setBackground(new java.awt.Color(255, 239, 255));
+        numE_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        numE_field.setToolTipText("");
+        numE_field.setBorder(null);
+        numE_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numE_fieldActionPerformed(evt);
+            }
+        });
+        background.add(numE_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 190, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,20 +180,51 @@ public class Vent2 extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Volver_v1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver_v1ActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        Vent1 v1 = new Vent1();
+        v1.setVisible(true);
     }//GEN-LAST:event_Volver_v1ActionPerformed
 
     private void nPlayers_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nPlayers_fieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nPlayers_fieldActionPerformed
+
+    private void maxC_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maxC_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_maxC_fieldActionPerformed
+
+    private void Crear_v3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_v3ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        controlador.crear_juego(Integer.parseInt(nPlayers_field.getText()), 
+                Integer.parseInt(maxC_field.getText()),
+                Integer.parseInt(numE_field.getText()),
+                Integer.parseInt(mode_field.getText()));
+        Vent3 v3 = new Vent3();
+        v3.Jugadores_display1.setText(controlador.visualizar_Jugadores());
+        v3.elements_display.setText(controlador.visualizar_Elementos());
+        v3.setVisible(true);
+    }//GEN-LAST:event_Crear_v3ActionPerformed
+
+    private void mode_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mode_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mode_fieldActionPerformed
+
+    private void numE_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numE_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numE_fieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,14 +272,13 @@ public class Vent2 extends javax.swing.JFrame {
     private javax.swing.JSeparator Separator4;
     private javax.swing.JButton Volver_v1;
     private javax.swing.JPanel background;
-    private javax.swing.JTextField maxC_field;
+    public static javax.swing.JTextField maxC_field;
     private javax.swing.JLabel maxC_label;
-    private javax.swing.JButton mode1;
-    private javax.swing.JButton mode2;
+    public static javax.swing.JTextField mode_field;
     private javax.swing.JLabel mode_label;
-    private javax.swing.JTextField nPlayers_field;
+    public static javax.swing.JTextField nPlayers_field;
     private javax.swing.JLabel nPlayers_label;
-    private javax.swing.JTextField numE_field;
+    public static javax.swing.JTextField numE_field;
     private javax.swing.JLabel numE_label;
     private javax.swing.JLabel qmark1;
     private javax.swing.JLabel qmark2;

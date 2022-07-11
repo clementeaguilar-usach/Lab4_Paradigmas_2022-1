@@ -11,9 +11,11 @@ import java.util.Objects;
  * de Dobble.
  * 
  * Sus atributos son:
- * cantJugadores: n�mero de jugadores actuales en el juego
- * jugadorActual: nombre del jugador actuando en el turno actual
- * modoJuego: valor correspondiente al modo de juego que se est� jugando
+ * cantJugadores: Entero representando el numero de jugadores actuales en el juego.
+ * jugadorActual: Nombre del jugador actuando en el turno actual.
+ * modoJuego: Valor correspondiente al modo de juego que se esta jugando.
+ * jugadores: Lista de jugadores dentro de la partida.
+ * cardsSet: Mazo de Dobble con el que se juega.
  */
 public class DobbleGame {
     private int cantJugadores;
