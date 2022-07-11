@@ -47,6 +47,11 @@ public class Vent1 extends javax.swing.JFrame {
         Jugar_v2.setBackground(new java.awt.Color(255, 239, 255));
         Jugar_v2.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         Jugar_v2.setText("JUGAR");
+        Jugar_v2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jugar_v2ActionPerformed(evt);
+            }
+        });
         background.add(Jugar_v2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
 
         Título.setBackground(new java.awt.Color(255, 183, 176));
@@ -71,6 +76,10 @@ public class Vent1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Jugar_v2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jugar_v2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Jugar_v2ActionPerformed
 
     /**
      * @param args the command line arguments
