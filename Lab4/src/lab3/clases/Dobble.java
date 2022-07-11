@@ -152,11 +152,8 @@ public class Dobble {
             for(int i = 0; i < aux - maxC; i++){
                 mazo.remove(0);
             }
-            this.maxC = mazo.size();
         }
-        else{
-            this.maxC = this.cards.size();
-        }
+        this.maxC = mazo.size();
         this.cards = mazo;
         System.out.println("Mazo creado con exito.");
     }
