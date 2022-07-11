@@ -27,22 +27,62 @@ public class Vent3 extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        terminar_v1 = new javax.swing.JButton();
+        game_v5 = new javax.swing.JButton();
+        players_label = new javax.swing.JLabel();
+        players_pane = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        add_player = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         background.setBackground(new java.awt.Color(255, 183, 176));
         background.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        background.setPreferredSize(new java.awt.Dimension(800, 600));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jButton1.setText("SALIR");
-        background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 100, -1));
+        terminar_v1.setBackground(new java.awt.Color(255, 239, 255));
+        terminar_v1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        terminar_v1.setText("TERMINAR");
+        terminar_v1.setFocusable(false);
+        background.add(terminar_v1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 160, -1));
 
-        jButton4.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jButton4.setText("JUGAR");
-        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
+        game_v5.setBackground(new java.awt.Color(255, 239, 255));
+        game_v5.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        game_v5.setText("INICIAR JUEGO");
+        game_v5.setFocusable(false);
+        background.add(game_v5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
+
+        players_label.setBackground(new java.awt.Color(255, 183, 176));
+        players_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        players_label.setForeground(new java.awt.Color(255, 239, 255));
+        players_label.setText("Jugadores:");
+        background.add(players_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(255, 239, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(8);
+        jTextArea1.setBorder(null);
+        jTextArea1.setEnabled(false);
+        jTextArea1.setFocusable(false);
+        jTextArea1.setHighlighter(null);
+        players_pane.setViewportView(jTextArea1);
+
+        background.add(players_pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
+
+        add_player.setBackground(new java.awt.Color(255, 239, 255));
+        add_player.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        add_player.setText("Agregar jugador");
+        add_player.setFocusable(false);
+        add_player.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_playerActionPerformed(evt);
+            }
+        });
+        background.add(add_player, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,16 +90,22 @@ public class Vent3 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void add_playerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_playerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_playerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,8 +146,12 @@ public class Vent3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add_player;
     private javax.swing.JPanel background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton game_v5;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel players_label;
+    private javax.swing.JScrollPane players_pane;
+    private javax.swing.JButton terminar_v1;
     // End of variables declaration//GEN-END:variables
 }

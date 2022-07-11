@@ -27,23 +27,33 @@ public class Vent1 extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Salir_quit = new javax.swing.JButton();
+        Jugar_v2 = new javax.swing.JButton();
+        Título = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         background.setBackground(new java.awt.Color(255, 183, 176));
         background.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jButton1.setText("SALIR");
-        background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 100, -1));
+        Salir_quit.setBackground(new java.awt.Color(255, 239, 255));
+        Salir_quit.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        Salir_quit.setText("SALIR");
+        background.add(Salir_quit, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 100, -1));
 
-        jButton4.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jButton4.setText("JUGAR");
-        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
+        Jugar_v2.setBackground(new java.awt.Color(255, 239, 255));
+        Jugar_v2.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        Jugar_v2.setText("JUGAR");
+        background.add(Jugar_v2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
+
+        Título.setBackground(new java.awt.Color(255, 183, 176));
+        Título.setFont(new java.awt.Font("Segoe UI", 1, 84)); // NOI18N
+        Título.setForeground(new java.awt.Color(255, 239, 255));
+        Título.setText("DOBBLE");
+        background.add(Título, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 330, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -51,12 +61,12 @@ public class Vent1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -99,8 +109,9 @@ public class Vent1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Jugar_v2;
+    private javax.swing.JButton Salir_quit;
+    private javax.swing.JLabel Título;
     private javax.swing.JPanel background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     // End of variables declaration//GEN-END:variables
 }
