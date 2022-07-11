@@ -16,7 +16,8 @@ import java.awt.Toolkit;
 public class Vent4 extends javax.swing.JFrame {
 
     /**
-     * Creates new form prueba_interfaz
+     * Cuarta ventana del programa.
+     * initComponents() Inicializa los componentes del JFrame.
      */
     public Vent4() {
         initComponents();
@@ -105,6 +106,15 @@ public class Vent4 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * Operación del botón ACEPTAR.
+     * @param evt 
+     * Oculta Vent4 e inicializa Vent3.
+     * Le entrega el nombre ingresado en el campo al controlador.
+     * Vuelve a visualizar la nueva lista de jugadores y los elementos del mazo
+     * de juego.
+     */
     private void Aceptar_v3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aceptar_v3ActionPerformed
         // TODO add your handling code here:
         setVisible(false);

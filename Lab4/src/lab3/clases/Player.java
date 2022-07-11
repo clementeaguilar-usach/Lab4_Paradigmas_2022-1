@@ -15,6 +15,7 @@ import java.util.Objects;
  * Sus atributos son:
  * nombre: Nombre del jugador
  * score: Puntaje del jugador
+ * stack: Lista de cartas para utilizar durante un juego.
  */
 public class Player {
     private String nombre;

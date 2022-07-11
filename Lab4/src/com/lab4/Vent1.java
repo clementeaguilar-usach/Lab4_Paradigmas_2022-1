@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.lab4;
+
 import lab3.controlador.*;
 import java.awt.event.WindowEvent;
 import java.awt.Toolkit;
@@ -15,14 +16,17 @@ import javax.swing.JPanel;
 public class Vent1 extends javax.swing.JFrame {
 
     /**
-     * Creates new form prueba_interfaz
+     * Primera ventana del programa.
+     * initComponents() Inicializa los componentes del JFrame.
      */
     public Vent1() {
-        this.controlador = new Controlador();
         initComponents();
     }
-    
-    public void close(){
+
+    /**
+     * Función que cierra la ventana, finalizando el programa.
+     */
+    public void close() {
         WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }
@@ -94,14 +98,24 @@ public class Vent1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Operación del botón JUGAR.
+     * @param evt 
+     * Oculta Vent1 e inicializa Vent2.
+     */
     private void Jugar_v2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jugar_v2ActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         Vent2 v2 = new Vent2();
         v2.setVisible(true);
-        
+
     }//GEN-LAST:event_Jugar_v2ActionPerformed
 
+    /**
+     * Operación del botón SALIR.
+     * @param evt 
+     * Cierra el programa con el método close().
+     */
     private void Salir_quitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir_quitActionPerformed
         // TODO add your handling code here:
         close();
@@ -142,7 +156,6 @@ public class Vent1 extends javax.swing.JFrame {
             }
         });
     }
-    private Controlador controlador;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Jugar_v2;
     private javax.swing.JButton Salir_quit;

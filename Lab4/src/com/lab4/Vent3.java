@@ -15,7 +15,8 @@ import java.awt.Toolkit;
 public class Vent3 extends javax.swing.JFrame {
 
     /**
-     * Creates new form prueba_interfaz
+     * Tercera ventana del programa.
+     * initComponents() Inicializa los componentes del JFrame.
      */
     public Vent3() {
         initComponents();
@@ -133,6 +134,11 @@ public class Vent3 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Operación del botón AGREGAR JUGADOR.
+     * @param evt 
+     * Oculta Vent3 e inicializa Vent4.
+     */
     private void add_playerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_playerActionPerformed
         // TODO add your handling code here:
         setVisible(false);
@@ -140,6 +146,11 @@ public class Vent3 extends javax.swing.JFrame {
         v4.setVisible(true);
     }//GEN-LAST:event_add_playerActionPerformed
 
+    /**
+     * Operación del botón TERMINAR.
+     * @param evt 
+     * Oculta Vent3 e inicializa Vent1.
+     */
     private void terminar_v1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminar_v1ActionPerformed
         // TODO add your handling code here:
         setVisible(false);

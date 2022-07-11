@@ -14,6 +14,7 @@ import java.util.Objects;
  * cards: Lista de cartas del mazo
  * maxC: Entero representando el tamaño del mazo.
  * numE: Entero representando el número de elementos por carta.
+ * elements: Lista de strings que contiene los elementos presentes en el mazo Dobble
  */
 public class Dobble {
     private ArrayList<Card> cards;
@@ -91,6 +92,16 @@ public class Dobble {
         this.elements = new ArrayList<String>();
     }
 
+    /**
+     * Dobble constructor de mazo Dobble en base a los parametros numero de
+     * elementos por carta, cantidad maxima de cartas del mazo, lista de Strings
+     * con elementos. Usa la fórmula n^2 + n + 1 para generar las cartas. Si
+     * se escogió un maxC distinto a -1 y 0, se corta el mazo hasta el tamanio
+     * deseado.
+     * @param numE Entero, número de elementos
+     * @param maxC Entero, máximo de cartas en un mazo
+     * @param Elements Lista de strings con elementos.
+     */
     public Dobble(int numE, int maxC, ArrayList<String> Elements){
         this.maxC = maxC;
         this.numE = numE;
@@ -150,6 +161,11 @@ public class Dobble {
         System.out.println("Mazo creado con exito.");
     }
     
+    /**
+     * OnlyOneCommon función encargada de encontrar un elemento en común entre
+     * todos los pares de cartas del mazo.
+     * @return 
+     */
     public boolean OnlyOneCommon(){
         for(Card carta : cards){
             for(int i = 0; i < carta.getElements().size(); i++){
@@ -171,6 +187,10 @@ public class Dobble {
         return true;
     }
 
+    /**
+     * dobbleCheck Llama a la funcion OnlyOneCommon.
+     * @return 
+     */
     public boolean dobbleCheck(){
         return OnlyOneCommon();
     }

@@ -31,7 +31,7 @@ public class Controlador {
                               "Pinguino", "imOp"));
 
     /**
-     *
+     * Constructor de DobbleGame para el controlador.
      */
     public Controlador() {
         Game = new DobbleGame();
@@ -39,7 +39,7 @@ public class Controlador {
 
     /**
      *
-     * @return
+     * 
      */
     public DobbleGame getGame() {
         return Game;
@@ -53,6 +53,12 @@ public class Controlador {
         this.Game = Game;
     }
 
+    /**
+     * esPrimo verifica que un número n sea primo.
+     * 
+     * @param n Entero a evaluar
+     * @return true o false
+     */
     public boolean esPrimo(int n) {
         for (int i = 2; i < n; i++) {
             if (n % i == 0) {
@@ -62,6 +68,14 @@ public class Controlador {
         return true;
     }
 
+    /**
+     * crear_juego construye un juego de Dobble con Mazo, Jugadores, Modo de juego
+     * y sus atributos.
+     * @param cantidad Entero, representa la cantidad de jugadores.
+     * @param maxC Entero, total de cartas del mazo.
+     * @param numE Entero, número de elementos por carta.
+     * @param modo Entero, representa el modo de juego que se desea jugar.
+     */
     public void crear_juego(int cantidad, int maxC, int numE, int modo) {
         if (cantidad <= 0) {
             System.out.println("No se puede crear un juego con 0 jugadores");
@@ -86,6 +100,12 @@ public class Controlador {
         return;
     }
 
+    /**
+     * addplayer Agrega un jugador a la lista de jugadores del juego. Retorna 0
+     * y -1 frente a salidas fallidas.
+     * @param nombre String, nombre del jugador a ingresar.
+     * @return String
+     */
     public String addplayer(String nombre) {
         if (Game.getCantJugadores() != Game.getJugadores().size()) {
             ArrayList<Player> jugadores = Game.getJugadores();
@@ -107,6 +127,10 @@ public class Controlador {
         return;
     }
     
+    /**
+     * visualizar_Elementos muestra los elementos de un juego de Dobble.
+     * @return String output
+     */
     public String visualizar_Elementos(){
         String output = "";
         for (String elemento : Game.getCardsSet().getElements()){
@@ -115,6 +139,10 @@ public class Controlador {
         return output;
     }
     
+    /**
+     * visualizar_Jugadores muestra los jugadores de un juego de Dobble.
+     * @return String output
+     */
     public String visualizar_Jugadores(){
         String output = "";
         for (Player jugador : Game.getJugadores()){
@@ -123,6 +151,10 @@ public class Controlador {
         return output;
     }
     
+    /**
+     * visualizar_Mazo muestra las cartas del mazo de un juego de Dobble.
+     * @return String output
+     */
     public String visualizar_Mazo(){
         String output = "";
         output = output.concat("Mazo: \n");
@@ -136,25 +168,11 @@ public class Controlador {
         return output;
     }
 
-    /*
-    public void visualizar_estado() {
-        String output = "";
-        output = output.concat("Jugadores actuales: ");
-        for (Player jugador : Game.getJugadores()) {
-            output = output.concat(jugador.getNombre() + " Score: " + jugador.getScore() + "\n");
-        }
-        output = output.concat("\n");
-        output = output.concat("Mazo: \n");
-        for (Card carta : Game.getCardsSet().getCards()) {
-            output = output.concat("Carta: (");
-            for (String elemento : carta.getElements()) {
-                output = output.concat(elemento + " ");
-            }
-            output = output.concat(")\n");
-        }
-        System.out.println(output);
-    }
-*/
+    /**
+     * dobbleCheck llama al método dobbleCheck para verificar que un mazo
+     * sea apto para jugar Dobble.
+     * @return true o false
+     */
     public boolean dobbleCheck() {
         return Game.dobbleCheck();
     }

@@ -14,12 +14,16 @@ import java.awt.Toolkit;
 public class Vent2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form prueba_interfaz
+     * Segunda ventana del programa.
+     * initComponents() Inicializa los componentes del JFrame.
      */
     public Vent2() {
         initComponents();
     }
     
+    /**
+     * Se inicializa el controlador para comenzar a operar sobre las clases.
+     */
     static Controlador controlador = new Controlador();
 
     /**
@@ -190,6 +194,11 @@ public class Vent2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Operación del botón VOLVER.
+     * @param evt 
+     * Oculta Vent2 e inicializa Vent1.
+     */
     private void Volver_v1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver_v1ActionPerformed
         // TODO add your handling code here:
         setVisible(false);
@@ -205,6 +214,14 @@ public class Vent2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_maxC_fieldActionPerformed
 
+    /**
+     * Operación del botón CREAR.
+     * @param evt 
+     * Oculta Vent2 e inicializa Vent3.
+     * El controlador genera un juego de Dobble a partir de los parámetros
+     * recogidos en los campos anteriores.
+     * Entrega los jugadores y elementos de la partida a la ventana siguiente.
+     */
     private void Crear_v3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear_v3ActionPerformed
         // TODO add your handling code here:
         setVisible(false);

@@ -6,7 +6,7 @@ package lab3.clases;
 import java.util.ArrayList;
 
 /**
- * Card corresponde a la clase que representa a cada carta que ser� parte
+ * Card corresponde a la clase que representa a cada carta que sera parte
  * de un mazo de Dobble.
  * 
  * Sus atributos son:

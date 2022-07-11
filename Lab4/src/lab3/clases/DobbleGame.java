@@ -16,6 +16,7 @@ import java.util.Objects;
  * modoJuego: Valor correspondiente al modo de juego que se esta jugando.
  * jugadores: Lista de jugadores dentro de la partida.
  * cardsSet: Mazo de Dobble con el que se juega.
+ * tablero: Lista de Cartas que abstrae el tablero de juego.
  */
 public class DobbleGame {
     private int cantJugadores;
