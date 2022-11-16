@@ -1,0 +1,20 @@
+El uso esperado del programa tiene el siguiente orden:
+
+1) Ejecutar batch.bat (Toma al rededor de 6 segundos en iniciar el programa).
+2) Crear juego (Opción 1).
+2.1) Ingresar cantidad de jugadores (entre 0 y 8).
+2.2) Ingresar el tamaño del mazo con el que se desea jugar (-1 o número entre 2 y 31).
+2.2) Ingresar el número de elementos por carta (mayor o igual a 2).
+2.3) Ingresar modo de juego (solo se puede jugar con opción 1, modo Stack).
+//En caso de seguir estos pasos, se creará un juego de Dobble sin jugadores.
+3) Registrar jugadores (cantidad igual al total ingresado anteriormente)  (Opción 2).
+4) Visualizar estado completo del juego (se muestra el mazo de cartas solo para fines de la entrega) (Opción 4).
+5) Jugar (Opción 3).
+5.1) Se mostrarán las primeras dos cartas del mazo sobre el tablero y comenzará el turno del jugador 1.
+5.2) Este debe escribir el nombre del elemento repetido entre ambas cartas o "paso".
+5.3) Si le acertó al elemento repetido, gana 2 puntos.
+5.4) Si falló al escoger el elemento repetido, se pasa el turno al siguiente jugador y no se ganan puntos.
+5.5) Si escogió "paso", el jugador pasa su turno.
+5.6) El juego finalizará cuando se adivinen los elementos de las últimas cartas sobre el tablero.
+5.7) Cuando lo anterior suceda, se anunciarán los ganadores de la partida (jugador/es con más puntos que el resto).
+6) Salir (Opción 5).
